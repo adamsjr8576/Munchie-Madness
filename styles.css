@@ -33,7 +33,7 @@ input[type = "text"] {
 	border: 1px solid #ebebeb;
 }
 
-input[type = "button"] {
+.snack-button {
 	width: 175px;
 	height: 40px;
 	font-size: 20px;
@@ -48,6 +48,10 @@ input[type = "button"] {
 	cursor: pointer;
 }
 
+.snack-button:disabled {
+  background-color: grey;
+}
+
 textarea {
 	width: 50%;
 	font-size: 20px;
@@ -57,25 +61,35 @@ textarea {
 	border: 1px solid #ebebeb;
 }
 
-section {
-	margin: 5px auto;
-	width: 30%;
-	background: #ed6fe5;
-	border-radius: 5px;
-	text-align: center;
-	font-size: 24px;
+.grocery-list {
+  display: flex;
+	flex-direction: column;
+	margin-top: 20px;
+}
+
+.grocery-list-card {
+margin: 15px auto;
+width: 450px;
+background: #ed6fe5;
+border-radius: 5px;
+text-align: center;
+font-size: 24px;
 }
 
 .delete-card-button {
-/* 	width: 125px;
-	height: 40px;
-	font-size: 60px;
+	width: 125px;
+	height: 30px;
+	font-size: 20px;
 	border-radius: 5px;
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 	font-family: Baloo;
 	text-transform: uppercase;
-	background-color: black;
+	background-color: #ebebeb;
 	color: black;
 	border: transparent;
-	cursor: pointer; */
+	cursor: pointer;
+}
+
+.munchie-card-text {
+  margin: 10px auto 10px auto;
 }
