@@ -7,7 +7,7 @@ var munchieCardInfo = document.getElementById('card-info');
 
 //Iteration 1
 // When the user hits `Add Snack`, a card is created that has the munchie name and the description.
-snackButton.addEventListener('click', disableSnackButton);
+snackButton.addEventListener('click', addSnackCard);
 munchieCardSection.addEventListener('click', onMunchieCard);
 snackInfo.addEventListener('change', enableSnackButton);
 snackName.addEventListener('change', enableSnackButton);
@@ -25,6 +25,9 @@ function addSnackCard() {
 	<button type="button" class="delete-card-button">DELETE</button>
   </div>
 `
+snackName.value = "";
+snackInfo.value = "";
+snackButton.disabled = true;
 }
 
 //Iteration 2
@@ -48,17 +51,8 @@ function makeCardEditable() {
 //Iteration 4
 // If there is no text in the item field OR the info field, the Add Snack button should be disabled
 
-function disableSnackButton() {
-  if(snackName.value === "" || snackInfo.value === "") {
-    snackButton.disabled = true;
-  }
-  else {
-    addSnackCard();
-  }
-}
-
 function enableSnackButton() {
-  if(snackName.value.length > 0 || snackInfo.value.length > 0) {
+  if(snackName.value.length > 0 && snackInfo.value.length > 0) {
     snackButton.disabled = false;
   }
 }
