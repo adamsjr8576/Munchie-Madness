@@ -4,14 +4,18 @@ var snackInfo = document.getElementById('snack-desc');
 var munchieCardSection = document.getElementById('grocery-list-add');
 var munchieCardName = document.getElementById('card-name');
 var munchieCardInfo = document.getElementById('card-info');
+
 //Iteration 1
 // When the user hits `Add Snack`, a card is created that has the munchie name and the description.
 snackButton.addEventListener('click', disableSnackButton);
-munchieCardSection.addEventListener('click', makeCardEditable);
-munchieCardSection.addEventListener('click', deleteSnackCard);
+munchieCardSection.addEventListener('click', onMunchieCard);
 snackInfo.addEventListener('change', enableSnackButton);
 snackName.addEventListener('change', enableSnackButton);
 
+function onMunchieCard() {
+  makeCardEditable();
+  deleteSnackCard();
+}
 
 function addSnackCard() {
 	munchieCardSection.innerHTML += `
@@ -49,7 +53,6 @@ function disableSnackButton() {
     snackButton.disabled = true;
   }
   else {
-    snackButton.disabled = false;
     addSnackCard();
   }
 }
